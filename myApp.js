@@ -76,7 +76,7 @@ app.route("/name").get((req, res) => res.json({name: req.query.first + " " + req
 
 /** 12) Get data form POST  */
 
-
+app.post("/name", (req, res) => res.json({name: req.body.first + " " + req.body.last}));
 
 // This would be part of the basic setup of an Express app
 // but to allow FCC to run tests, the server is already active
