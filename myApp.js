@@ -51,8 +51,7 @@ app.get("/json", (req, res) => {
 /** 8) Chaining middleware. A Time server */
 
 app.get('/now', (req, res, next) => {
-    var indiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
-    req.time = (new Date(indiaTime)).toLocaleString();
+    req.time = (new Date()).toString();
     next();
 }, (req, res) => {
     res.json({time: req.time});
