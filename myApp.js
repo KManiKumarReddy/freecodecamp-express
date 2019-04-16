@@ -52,7 +52,7 @@ app.get("/json", (req, res) => {
 
 app.get('/now', (req, res, next) => {
     var indiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
-    req.time = (new Date(indiaTime)).toString();
+    req.time = (new Date(indiaTime)).toLocaleString();
     next();
 }, (req, res) => {
     res.json({time: req.time});
